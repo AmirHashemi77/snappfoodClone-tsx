@@ -5,7 +5,7 @@ interface PropsType{};
 const App:FC<PropsType> = () => {
   return (
     <div>
-
+      
     </div>
 
   );
