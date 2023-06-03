@@ -1,14 +1,21 @@
 import React, { FC } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
-import FoodList from './Component/Page/FoodList/FoodList';
-import Restrants from './Component/Page/Restrants/Restrants';
-import Home from './Component/Page/Home/Home';
+import FoodList from './Page/FoodList/FoodList';
+import Restrants from './Page/Restrants/Restrants';
+import Home from './Page/Home/Home';
+import { useSelector } from 'react-redux';
+import { RootState } from './Store';
 
 interface PropsType{};
 
 const App:FC<PropsType> = () => {
+
+  const showLoginPopUp=useSelector((state:RootState)=>state.ui.showLoginPopUp)
+
+
   return (
     <>
+    {showLoginPopUp && <LogInAndSignUpPopUp/>}
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/service/:category' element={<Restrants/>}/>
