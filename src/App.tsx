@@ -5,6 +5,7 @@ import Restrants from './Page/Restrants/Restrants';
 import Home from './Page/Home/Home';
 import { useSelector } from 'react-redux';
 import { RootState } from './Store';
+import LogInAndSignUpPopUp from './Component/LogInAndSignUp/LogInAndSignUpPopUp';
 
 interface PropsType{};
 
