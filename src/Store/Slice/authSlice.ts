@@ -1,12 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { userDataObject } from "../../Model/authModel";
 
 
-interface userDataObject{
-    id:string,
-    name:string,
-    phone:string,
-    password:string
-}
+
 
 
 interface initialStateType{
