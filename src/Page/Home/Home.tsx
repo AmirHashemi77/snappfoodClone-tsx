@@ -1,12 +1,21 @@
 import React, { FC } from 'react';
 import style from './Home.module.scss';
 import Header from '../../Component/Header/Header';
+import Loading from '../../Component/Loading/Loading';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../Store';
+import RestrantCategory from '../../Component/RestrantCategory/RestrantCategory';
+import Slider from '../../Component/RestrantSlider/Slider';
+import AppBanner from '../../Component/Banner/AppBanner';
+import SignInBanner from '../../Component/Banner/SignInBanner';
+import CitySection from '../../Component/CitySection/CitySection';
+import Footer from '../../Component/Footer/Footer';
 
 interface PropsType{};
 
 const Home:FC<PropsType> = () => {
 
-  const loading=useSelector((state)=>state.ui.showLoading);
+  const loading=useSelector((state:RootState)=>state.ui.showLoading);
 
   return (
       <>

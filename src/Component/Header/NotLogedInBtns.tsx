@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import style from './NotLogedInBtn.module.scss';
+import style from './NotLogedInBtns.module.scss';
 import { uiSliceAction } from '../../Store/Slice/uiSlice';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../Store';
