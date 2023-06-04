@@ -13,11 +13,11 @@ import { signUpAction } from '../../Store/Action/signupAction';
 
 const SignUp:FC= () => {
 
-  const passwordInput=useRef<HTMLInputElement>(null)
-  const nameInput=useRef<HTMLInputElement>(null)
-  const signUpBtn=useRef<HTMLButtonElement>(null)
-  const dispatch:AppDispatch=useDispatch()
-  const newUserPhoneNumber=useSelector((state:RootState)=>state.auth.notRegisterPhone)
+  const passwordInput=useRef<HTMLInputElement>(null);
+  const nameInput=useRef<HTMLInputElement>(null);
+  const signUpBtn=useRef<HTMLButtonElement>(null);
+  const dispatch:AppDispatch=useDispatch();
+  const newUserPhoneNumber=useSelector((state:RootState)=>state.auth.notRegisterPhone);
   useEffect(()=>{
       if(signUpBtn.current){
         signUpBtn.current.disabled=false;

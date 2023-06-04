@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import './Restrants.module.scss';
+import style from './Restrants.module.scss';
 
 interface PropsType{};
 

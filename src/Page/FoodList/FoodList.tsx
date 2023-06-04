@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import './FoodList.module.scss';
+import style from './FoodList.module.scss';
 
 interface PropsType{};
 
