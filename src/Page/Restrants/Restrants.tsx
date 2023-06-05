@@ -13,6 +13,10 @@ import { fetchRestrantListData } from '../../Store/Action/restrantListAction';
 import RestrantSort from '../../Component/RestrantSortSection/RestrantSort';
 import RestrantCard from '../../Component/RestrantSlider/RestrantCard';
 import BreadCrumb from '../../Component/BreadCrumb/BreadCrumb';
+import RestrantsList from '../../Component/RestrantList/RestrantsList';
+import RestrantListSideBar from '../../Component/RestrantListSideBar/RestrantListSideBar';
+import RestrantsFilter from '../../Component/RestrantsFilter/RestrantsFilter';
+import RestrantPriceFilter from '../../Component/RestrantPriceFilter/RestrantPriceFilter';
 
 
 
@@ -47,7 +51,7 @@ const Restrants:FC = () => {
         const filteredList= restrantListData.filter((item)=>item.filterCategory.includes(parmas.twosubcategory!)===true);
        
         setRestrantList(filteredList) 
-   }
+       }
     },[parmas.category,parmas.subcategory,parmas.twosubcategory,restrantListData])
     
     
@@ -71,17 +75,17 @@ const Restrants:FC = () => {
                             <RestrantListSideBar />
                             }
                             <div className={style.priceFilter}><RestrantPriceFilter/></div>
-                            <RestrantFilter/>
+                            <RestrantsFilter/>
                             </div>
                         
                         {
-                            !loading ? <RestrantList> 
+                            !loading ? <RestrantsList> 
                                             {
                                                 restrantList.map((item)=>(
                                                     <RestrantCard key={item.id} id={item.id} title={item.title} subtitle={item.subtitle} rate={item.rate} logo={item.logo} image={item.image} />
                                                 ))
                                             }   
-                                        </RestrantList> :
+                                        </RestrantsList> :
 
                                         <div className={style.loadingWrapper}><Loading/></div>
                         }

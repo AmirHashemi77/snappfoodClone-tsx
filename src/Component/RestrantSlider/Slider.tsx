@@ -28,7 +28,7 @@ const Slider:FC<PropsType> = ({tag,title}) => {
             
         },[dipatch,tag])
 
-    const onMouseDown=(e:MouseEvent)=>{
+    const onMouseDown=(e:React.MouseEvent<HTMLDivElement>)=>{
         isDown=true;
         startX = e.pageX - sliderEl.current.offsetLeft;
         scrollLeft= sliderEl.current.scrollLeft;
@@ -39,12 +39,13 @@ const Slider:FC<PropsType> = ({tag,title}) => {
     const onMouseLeave=()=>{
         isDown=false
     }
-    const onMouseMove=(e:MouseEvent)=>{
+    const onMouseMove=(e:React.MouseEvent<HTMLDivElement>)=>{
         if(!isDown){return}
         e.preventDefault();
         const x=e.pageX - sliderEl.current.offsetLeft;
         const walk=(x - startX)*5;
-        sliderEl.current.scrollLeft=scrollLeft-walk
+        sliderEl.current.scrollLeft=scrollLeft-walk;
+       
 
     }
     
@@ -72,11 +73,10 @@ const Slider:FC<PropsType> = ({tag,title}) => {
             
             </Link>
         </div>
-        <div onMouseDown={(e)=>onMouseDown} onMouseUp={onMouseUp} onMouseLeave={onMouseLeave} onMouseMove={(e)=>onMouseMove} className={style.slider} ref={sliderEl}>
+        <div onMouseDown={onMouseDown} onMouseUp={onMouseUp} onMouseLeave={onMouseLeave} onMouseMove={onMouseMove} className={style.slider} ref={sliderEl}>
             {
                 sliderItems.map((item)=>(
                     <RestrantCard key={item.id} id={item.id} title={item.title} subtitle={item.subtitle} rate={item.rate} logo={item.logo} image={item.image} />
-
                 ))
             }
         </div>

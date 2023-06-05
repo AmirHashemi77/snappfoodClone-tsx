@@ -22,7 +22,7 @@ export const fetchSliderData=(setData:React.Dispatch<RestrantModel[]>,tag:string
 
        }catch(err:any){
             console.log(err.message);
-            dispatch(uiSliceAction.loadingHandler(false))
+            dispatch(uiSliceAction.loadingHandler(true))
 
        }
 

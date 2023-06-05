@@ -1,4 +1,7 @@
-export const breadCrumbData=[
+export const breadCrumbData:{
+    id: string;
+    title: string;
+}[]=[
     {
         id:'restrant',
         title:'رستوران'

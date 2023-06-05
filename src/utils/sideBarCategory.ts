@@ -1,4 +1,9 @@
-export const sideBarCategory={
+import { CategoryModel } from "../Model/categoryModel";
+
+
+
+
+export const sideBarCategory:{ [key: string]:Array<CategoryModel> } = {
         restrant:[
             {
                 id:'fastfood',
