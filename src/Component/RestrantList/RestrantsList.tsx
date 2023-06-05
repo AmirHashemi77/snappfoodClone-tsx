@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import style from './RestrantsList.module.scss';
 
 interface PropsType{
-    children:any
+    children:ReactNode
 };
 
 const RestrantsList:FC<PropsType> = ({children}) => {
