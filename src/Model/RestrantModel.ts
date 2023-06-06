@@ -43,8 +43,8 @@ export interface RestrantMenuModel{
 
 export interface FoodItemModel{
     id: string,
-    image: string,
-    title: string,
+    img: string,
+    name: string,
     ingredient: string,
     price: number,
     rate: number,

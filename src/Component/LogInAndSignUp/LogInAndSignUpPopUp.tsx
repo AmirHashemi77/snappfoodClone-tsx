@@ -8,6 +8,7 @@ import { uiSliceAction } from '../../Store/Slice/uiSlice';
 import LogIn from './LogIn';
 import PasswordLogIn from './PasswordLogIn';
 import SignUp from './SignUp';
+import { AuthStep } from '../../Model/authStepModel';
 
 
 
@@ -22,9 +23,9 @@ const LogInAndSignUpPopUp:FC = () => {
     <>
     <div onClick={showLoginPopUp} className={style.backDrop}></div>
         <div className={style.container}>
-            {step==='phoneNumber' && <LogIn/>}
-            {step==='password' && hasUser && <PasswordLogIn/>}
-            {step==='signup' && !hasUser && <SignUp/>}
+            {step===AuthStep.phoneNumber && <LogIn/>}
+            {step===AuthStep.password && hasUser && <PasswordLogIn/>}
+            {step===AuthStep.signup && !hasUser && <SignUp/>}
 
         </div>
     </>

@@ -6,6 +6,7 @@ import { AppDispatch, RootState } from '../../Store';
 import { authSliceAction } from '../../Store/Slice/authSlice';
 import { userDataObject } from '../../Model/authModel';
 import { uiSliceAction } from '../../Store/Slice/uiSlice';
+import { AuthStep } from '../../Model/authStepModel';
 
 
 
@@ -26,7 +27,7 @@ const PasswordLogIn:FC = () => {
         }
     }
     const backBtnHandler=()=>{
-        dispatch(authSliceAction.changeStep('phoneNumber'))
+        dispatch(authSliceAction.changeStep(AuthStep.phoneNumber))
         
     }
     const logInHandler=()=>{

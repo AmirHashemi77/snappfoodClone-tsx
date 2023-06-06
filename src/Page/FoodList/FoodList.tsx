@@ -14,6 +14,8 @@ import SubmitAlert from '../../Component/SubmitAlert/SubmitAlert';
 import FoodPopUp from '../../Component/FoodPopUp/FoodPopUp';
 import RestrantPopUp from '../../Component/RestrantPopUp/RestrantPopUp';
 import LogoAndMenu from '../../Component/LogoAndMenuFoodList/LogoAndMenu';
+import FoodListContainer from '../../Component/FoodList/FoodListContainer';
+import CartContainer from '../../Component/CartSection/CartContainer';
 
 interface PropsType{};
  

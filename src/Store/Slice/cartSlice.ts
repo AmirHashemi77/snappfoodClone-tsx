@@ -3,7 +3,7 @@ import CartItemModel from '../../Model/cartItemModel';
 
 
 
- interface initialStateType{
+interface initialStateType{
     items:Array<CartItemModel>,
     totalQuantity:number,
     totalPrice:number,

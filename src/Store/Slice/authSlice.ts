@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { userDataObject } from "../../Model/authModel";
+import { AuthStep } from "../../Model/authStepModel";
 
 
 
@@ -8,7 +9,7 @@ import { userDataObject } from "../../Model/authModel";
 interface initialStateType{
     authed:boolean,
     authedUserData :userDataObject | {} ,
-    stepName:string,
+    stepName:AuthStep,
     hasUser:null | boolean,
     registeredUser :userDataObject | {} ,
     notRegisterPhone:null | string
@@ -20,7 +21,7 @@ interface initialStateType{
 const initialState:initialStateType={
     authed:false,
     authedUserData:{},
-    stepName:'phoneNumber',
+    stepName:AuthStep.phoneNumber,
     hasUser:null,
     registeredUser:{},
     notRegisterPhone:null
@@ -42,7 +43,7 @@ const authSlice=createSlice({
             registeredUserHandler(state,action:PayloadAction<userDataObject>){
                 state.registeredUser=action.payload;
             },
-            changeStep(state,action:PayloadAction<string>){
+            changeStep(state,action:PayloadAction<AuthStep>){
                 state.stepName=action.payload;
             },
             hasUserHandler(state,action:PayloadAction<boolean>){
@@ -54,13 +55,13 @@ const authSlice=createSlice({
             clearData(state){
                 state.notRegisterPhone=null;
                 state.registeredUser={};
-                state.stepName='phoneNumber'
+                state.stepName=AuthStep.phoneNumber
                 state.hasUser=null
             },
             deepClearData(state){
                 state.notRegisterPhone=null;
                 state.registeredUser={};
-                state.stepName='phoneNumber'
+                state.stepName=AuthStep.phoneNumber
                 state.hasUser=null
                 state.authedUserData={}
                 

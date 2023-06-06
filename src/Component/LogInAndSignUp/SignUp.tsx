@@ -8,6 +8,7 @@ import { uiSliceAction } from '../../Store/Slice/uiSlice';
 import { authSliceAction } from '../../Store/Slice/authSlice';
 import { userDataObject } from '../../Model/authModel';
 import { signUpAction } from '../../Store/Action/signupAction';
+import { AuthStep } from '../../Model/authStepModel';
 
 
 
@@ -39,7 +40,7 @@ const SignUp:FC= () => {
       }
   }
   const backBtnHandler=()=>{
-      dispatch(authSliceAction.changeStep('phoneNumber'))
+      dispatch(authSliceAction.changeStep(AuthStep.phoneNumber))
       
   }
 
