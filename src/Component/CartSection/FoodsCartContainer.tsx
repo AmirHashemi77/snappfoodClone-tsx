@@ -3,7 +3,6 @@ import style from './FoodsCartContainer.module.scss';
 import FoodsCartItem from './FoodsCartItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Store';
-import CartItemModel from '../../Model/cartItemModel';
 
 
 
